@@ -1,3 +1,4 @@
+import { type } from "express/lib/response";
 import mongoose from "mongoose";
 
 const todoSchema = new mongoose.Schema(
@@ -5,6 +6,9 @@ const todoSchema = new mongoose.Schema(
         title: {
             type: String,
             required: true
+        },
+        description:  {
+            type: String
         },
         content: {
             type: String
