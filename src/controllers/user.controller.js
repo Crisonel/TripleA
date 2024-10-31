@@ -67,9 +67,6 @@ const registerUser = async (req,res) => {
                 });
             }
 
-            const loginReq = { body: { email, password } }; // Create a mock request object
-            await login(loginReq, res);
-
             return res.status(201).json({
                 created
             });

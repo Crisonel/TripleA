@@ -11,7 +11,7 @@ router.route("/login").post(login);
 
 //secured routes
 router.route("/logout").post(verifyJWT, logout);
-router.routes("/refresh-token").post(refreshAccessToken);
+router.route("/refresh-token").post(refreshAccessToken);
 router.route("/update-user").post(verifyJWT, updateInformation);
 
 
