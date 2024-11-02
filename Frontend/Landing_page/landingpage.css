@@ -1,0 +1,110 @@
+body {
+    background-color: initial;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-signup {
+    height: auto;
+    /* Changed: Adjust height to auto for responsive content */
+    width: 400px;
+    margin: auto;
+    border: 1px solid rgb(208, 208, 208);
+    border-radius: 5px;
+    margin-top: 10%;
+    padding: 20px;
+    /* Added: Internal padding for spacing */
+    box-shadow: 4px 4px 4px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* Added: Gap between elements */
+}
+
+.quote {
+    font-size: 22px;
+    color: #040404;
+    text-align: center;
+    margin-bottom: 10px;
+    /* Added: Bottom margin for spacing */
+}
+
+.login-quote {
+    font-size: 18px;
+    /* Changed: Reduced font size for better appearance */
+    color: #acaba9;
+    text-align: center;
+    margin-bottom: 20px;
+    /* Added: Bottom margin for spacing */
+}
+
+button {
+    height: 40px;
+    /* Changed: Adjusted height for alignment */
+    width: 100%;
+    /* Changed: Adjust width to full for consistent styling */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid rgb(236, 236, 236);
+    font-size: 14px;
+    cursor: pointer;
+    transition: border 0.3s ease;
+}
+
+button i {
+    margin-right: 5px;
+}
+
+label {
+    font-size: 13px;
+    color: #787774;
+    margin-bottom: 5px;
+    /* Added: Bottom margin for spacing */
+}
+
+input {
+    height: 35px;
+    /* Changed: Updated height for consistency */
+    width: 100%;
+    /* Changed: Full width for alignment */
+    padding: 5px;
+    /* Added: Padding inside input */
+    border: 1px solid rgb(208, 208, 208);
+    border-radius: 3px;
+    margin-bottom: 15px;
+    /* Added: Margin for consistent spacing */
+}
+
+.login {
+    color: white;
+    background-color: #2383E2;
+    margin-top: 10px;
+}
+
+.btn {
+    width: 100%;
+    /* Changed: Full width for alignment */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Added: Space between buttons */
+}
+
+#login-submit {
+    width: 100%;
+    /* Changed: Full width for alignment */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* Added: Space between form elements */
+}
+
+button:hover {
+    border: 2px solid rgb(221, 221, 221);
+}
