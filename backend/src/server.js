@@ -1,12 +1,13 @@
 import dotenv from "dotenv";
 import connectDB from "./db/index.js";
 import {app} from './app.js';
+import {scheduleReminder} from "./utils/deadline.util.js";
 
 dotenv.config({
     path: './.env'
 });
 
-
+scheduleReminder();
 
 connectDB()
 .then(() => {

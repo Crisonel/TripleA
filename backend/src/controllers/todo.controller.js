@@ -12,9 +12,9 @@ const createTodo = async (req,res) => {
 
         const todo = await Todo.create({
             title,
-            description: (description? description:""),
-            content: (content? content: ""),
-            priority: (priority? priority: ""),
+            description: (description? description:null),
+            content: (content? content: null),
+            priority: (priority? priority: null),
             tags: (tags? tags:""),
             user: user._id
         });
@@ -62,7 +62,8 @@ const updateTodo = async (req,res) => {
         description = '', 
         content = '', 
         priority = '', 
-        tags = [] 
+        tags = [] ,
+        deadline
     } = req.body; 
     const _id = req.params.id;
     const task = await Todo.findById(_id);
@@ -70,11 +71,12 @@ const updateTodo = async (req,res) => {
         {$and: [{_id},{user: user._id}]},
         {
             $set: {
-            title: (task.title !== title?.trim())? title: task.title,
-            description: (task.description !== description.trim)? description: task.description,
-            content: (task.content !== content.trim)? content: task.content,
-            priority: (task.priority !== priority.trim.toLowerCase)? priority: task.priority,
-            tags: (task.tags !== tags)? tags: task.tags
+            title: (task.title !== title?.trim())? title.trim(): task.title,
+            description: (task.description !== description.trim())? description.trim(): task.description,
+            content: (task.content !== content.trim())? content.trim(): task.content,
+            priority: (task.priority !== priority.trim().toLowerCase())? priority.trim().toLowerCase(): task.priority,
+            tags: (JSON.stringify(task.tags) !== JSON.stringify(tags))? tags: task.tags,
+            deadline: (task.deadline?.getTime() !== deadline?.getTime())? deadline: task.deadline
             }
         },
         {new: true}

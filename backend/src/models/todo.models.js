@@ -17,13 +17,17 @@ const todoSchema = new mongoose.Schema(
         },
         priority: {
             type: String,
-            default: "",
-            enum : ["","high","low","medium"]
+            default: null,
+            enum : [null,"high","low","medium"]
+        },
+        deadline :{
+            type: Date,
+            default: null
         },
         tags: [
             {
             type: String,
-            default: ""
+            default: null
         }
         ],
         user: {
